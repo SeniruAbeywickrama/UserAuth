@@ -1,6 +1,11 @@
-﻿namespace UserAuth.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using UserAuth.Models.Domains;
 
-public class AppDbContext
+namespace UserAuth.Data;
+
+public class AppDbContext  : DbContext
 {
+    public AppDbContext(DbContextOptions options) : base(options) {}
     
+    public DbSet<User> Users { get; set; }
 }

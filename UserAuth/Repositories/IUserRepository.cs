@@ -1,6 +1,9 @@
-﻿namespace UserAuth.Repositories;
+﻿using UserAuth.Models.Dto;
 
-public class IUserRepository
+namespace UserAuth.Repositories;
+
+public interface IUserRepository
 {
-    
+    Task<string> Register(UserRegisterDto dto);
+    Task<string> Login(UserLoginDto dto);
 }
